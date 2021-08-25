@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Quizzo</title>
+    <link rel="stylesheet" href="./Assets/style.css">
+</head>
+<!-- link to highscores and timer -->
+<body>
+    <header>
+        <!-- Will link to view all highscores & link time to JavaScript -->
+        <h3 id="highscore-tab">
+            <a href="./highscore.html">View Your HighScores</a>
+        </h3>
+        <div id="remainingTime"></div>
+    </header>
+<!-- information on the quiz and start button -->
+    <main id="description">
+        <div id="quiz">
+        <h1 id="title">Welcome to the Amazing Quizzo</h1>
+        <p id="content"> By clicking the start button below, you will start the code related quiz, </br> Instructions: Try to finish before the time runs out and keep in mind that an incorrect answer will shorten your time, Good Luck!</p>
+        </div>
+        <form id="highs">
+            <button id="startquiz" id="sq" type="start">Start Quizzo</button>
+        </form>
+    </header>
+    <script src="./Assets/quiz.js"></script>
+</body>
+</html>
