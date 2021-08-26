@@ -1,4 +1,4 @@
-// array with all the questions and ansers
+// array with all the questions and answers
 var myQuestions = [
 {
     question: "commonly used data types DO NOT include",
@@ -8,7 +8,7 @@ var myQuestions = [
     c: "alerts",
     d: "numbers"
     },
-    correctAnswer: "b"
+    answer: "b"
 },
 {
     question: "The condition in an if an if / else statement is enclosed with _____.",
@@ -18,7 +18,7 @@ var myQuestions = [
     c: "parenthesis",
     d: "square brackets"
     },
-    correctAnswer: "c"
+    answer: "c"
 },
 {
     question: "Arrays in JavaScript can be used to store ___.",
@@ -28,7 +28,7 @@ var myQuestions = [
     c: "booleans",
     d: "all of the above"
     },
-    correctAnswer: "d"
+    answer: "d"
 },
 {
     question: "String values must be enclosed within ___ when being assigned to variables",
@@ -38,7 +38,7 @@ var myQuestions = [
     c: "quotes",
     d: "paranthesis"
     },
-    correctAnswer: "b"
+    answer: "b"
 },
 {
     question: "A very useful tool used during development and debugging for printing content to the debugger is:",
@@ -48,9 +48,11 @@ var myQuestions = [
     c: "for loops",
     d: "console.log"
     },
-    correctAnswer: "c"
+    answer: "c"
 },
 ];
 
+// all declared variables
 var score = 0;
-var 
+var correctAnswer = 0;
+
