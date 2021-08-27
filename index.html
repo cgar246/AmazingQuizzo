@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./Assets/style.css">
 </head>
 
-<!-- link to highscores and timer -->
 <body>
     <header>
         <!-- Will link to view all highscores & link time to JavaScript -->
@@ -18,14 +17,13 @@
         <div id="remainingTime"></div>
     </header>
 <!-- information on the quiz and start button -->
-    <main id="description">
-        <div id="quiz">
+    <main id="wrapper">
+        <div id="quizquesDiv">
         <h1 id="title">Welcome to the Amazing Quizzo</h1>
-        <p id="content"> By clicking the start button below, you will start the code related quiz, </br> Instructions: Try to finish before the time runs out and keep in mind that an incorrect answer will shorten your time, Good Luck!</p>
+        <p> By clicking the start button below, you will start the code related quiz, </br> Instructions: Try to finish before the time runs out and keep in mind that an incorrect answer will shorten your time, Good Luck!</p>
         </div>
-        <form id="highs">
-            <button id="startquiz" id="sq" type="start">Start Quizzo</button>
-        </form>
+        <ul id="highScore"></ul>
+            <button id="start">Start Quizzo</button>
     </header>
     <script src="./Assets/quiz.js"></script>
 </body>
