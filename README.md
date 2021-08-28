@@ -7,7 +7,7 @@ Project was built with
 - HTML 
 - JavaScript
 
-![Screenshot of Password Generator](../Assets/images/css.png)
-![Screenshot of Password Generator](../Assets/images/html.png)
-![Screenshot of Password Generator](../Assets/images/js.png)
+![Screenshot of Amazing Quizzo's Code](/Assets/images/css.png)
+![Screenshot of Amazing Quizzo's Code](/Assets/images/html.png)
+![Screenshot of Amazing Quizzo's Code](/Assets/images/js.png)
 
