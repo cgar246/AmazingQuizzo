@@ -7,7 +7,7 @@ Project was built with
 - HTML 
 - JavaScript
 
-![Screenshot of Password Generator](../Assets/images/css)
-![Screenshot of Password Generator](../Assets/images/html)
-![Screenshot of Password Generator](../Assets/images/js)
+![Screenshot of Password Generator](../Assets/images/css.png)
+![Screenshot of Password Generator](../Assets/images/html.png)
+![Screenshot of Password Generator](../Assets/images/js.png)
 
