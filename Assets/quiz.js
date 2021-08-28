@@ -1,17 +1,17 @@
 // array with all the questions and answers
 var myQuestions = [
 {
-    title: "commonly used data types DO NOT include",
+    preguntas: "commonly used data types DO NOT include",
     possibilities: [
     "strings",
     "booleans",
     "alerts",
     "numbers"
     ],
-    answer: "booleans"
+    answer: "alerts"
 },
 {
-    title: "The condition in an if an if / else statement is enclosed with _____.",
+    preguntas: "The condition in an if an if / else statement is enclosed with _____.",
     possibilities: [
     "quotes",
     "curly brackets",
@@ -21,7 +21,7 @@ var myQuestions = [
     answer: "parenthesis"
 },
 {
-    title: "Arrays in JavaScript can be used to store ___.",
+    preguntas: "Arrays in JavaScript can be used to store ___.",
     possibilities: [
     "numbers",
     "other arrays",
@@ -31,24 +31,24 @@ var myQuestions = [
     answer: "all of the above"
 },
 {
-    title: "String values must be enclosed within ___ when being assigned to variables",
+    preguntas: "String values must be enclosed within ___ when being assigned to variables",
     possibilities: [
     "commas",
     "curly brackets",
     "quotes",
     "paranthesis"
     ],
-    answer: "curly brackets"
+    answer: "quotes"
 },
 {
-    title: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    preguntas: "A very useful tool used during development and debugging for printing content to the debugger is:",
     possibilities: [
     "JavaScript",
     "terminal / bash",
     "for loops",
     "console.log"
     ],
-    answer: "for loops"
+    answer: "console.log"
 },
 ];
 
@@ -59,17 +59,12 @@ var currentTime = document.querySelector("#remainingTime");
 var timer = document.querySelector("#start");
 var quizquesDiv = document.querySelector("#quizquesDiv");
 var wrapper = document.querySelector("#wrapper");
-
-// Seconds left is 15 seconds per question:
-var secondsLeft = 75;
-// Holds interval time
+var secondsLeft = 100;
 var holdInterval = 0;
-// Holds penalty time
-var penalty = 15;
-// Creates new element
+var punishment = 20;
 var ulCreate = document.createElement("ul");
 
-// Triggers timer on button, shows user a display on the screen
+// starts the quiz
 timer.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
@@ -86,21 +81,20 @@ timer.addEventListener("click", function () {
     render(correctAnswer)
 });
 
-// Renders questions and choices to page: 
+
 function render(correctAnswer) {
-    // Clears existing data 
+    // erases all data
     quizquesDiv.innerHTML = "";
     ulCreate.innerHTML = "";
     // For loops to loop through all info in array
     for (var i = 0; i < myQuestions.length; i++) {
-        // Appends question title only
-        var userQuestion = myQuestions[correctAnswer].title;
-        var userChoices = myQuestions[correctAnswer].possibilities;
+        var userQuestion = myQuestions[correctAnswer].preguntas;
+        var theseChoices = myQuestions[correctAnswer].possibilities;
         quizquesDiv.textContent = userQuestion;
     }
 
-    // New for each for question choices
-    userChoices.forEach(function (newItem) {
+    // to move on to the next question
+    theseChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
         quizquesDiv.appendChild(ulCreate);
@@ -109,7 +103,7 @@ function render(correctAnswer) {
     })
 }
 
-// Event to compare choices with answer
+// matching the answers with picked choice
 function compare(event) {
     var element = event.target;
 
@@ -123,16 +117,15 @@ function compare(event) {
             createDiv.textContent = "Correct! The answer is:  " + myQuestions[correctAnswer].answer;
             // Correct condition 
         } else {
-            secondsLeft = secondsLeft - penalty;
+            secondsLeft = secondsLeft - punishment;
             createDiv.textContent = "Wrong! The correct answer is:  " + myQuestions[correctAnswer].answer;
         }
 
     }
-    // Question Index determines number question user is on
+    // will add the number of correct questions by +1
     correctAnswer++;
 
     if (correctAnswer >= myQuestions.length) {
-        // All done will append last page with user stats
         allDone();
         createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + myQuestions.length + " Correct!";
     } else {
@@ -142,25 +135,23 @@ function compare(event) {
 
 }
 
-// All done will append last page
+
 function allDone() {
     quizquesDiv.innerHTML = "";
     currentTime.innerHTML = "";
 
-    // Heading:
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
-    createH1.textContent = "All Done!"
+    createH1.textContent = "Finitooo You Completed The Quiz!"
 
     quizquesDiv.appendChild(createH1);
 
-    // Paragraph
     var createP = document.createElement("p");
     createP.setAttribute("id", "createP");
 
     quizquesDiv.appendChild(createP);
 
-    // Calculates time remaining and replaces it with score
+    // time remaining will turn into the score 
     if (secondsLeft >= 0) {
         var timeRemaining = secondsLeft;
         var createP2 = document.createElement("p");
@@ -169,14 +160,14 @@ function allDone() {
         quizquesDiv.appendChild(createP2);
     }
 
-    // Label
+    // initials 
     var createLabel = document.createElement("label");
     createLabel.setAttribute("id", "createLabel");
     createLabel.textContent = "Enter your initials: ";
 
     quizquesDiv.appendChild(createLabel);
 
-    // input
+
     var createInput = document.createElement("input");
     createInput.setAttribute("type", "text");
     createInput.setAttribute("id", "initials");
@@ -184,7 +175,7 @@ function allDone() {
 
     quizquesDiv.appendChild(createInput);
 
-    // submit
+
     var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "Submit");
@@ -192,7 +183,7 @@ function allDone() {
 
     quizquesDiv.appendChild(createSubmit);
 
-    // Event listener to capture initials and local storage for initials and score
+    // localstorage will store the initials and score
     createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
 
@@ -215,7 +206,6 @@ function allDone() {
             allScores.push(finalScore);
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
-            // Travels to final page
             window.location.replace("./highscore.html");
         }
     });

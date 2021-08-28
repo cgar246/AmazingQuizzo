@@ -13,11 +13,10 @@
             position: relative;
             padding: 10px;
             font-size: 20px;
-            color: white;
+            color: orange;
             top: 30%;
             left: 55%;
             width: auto;
-            text-align: center;
             text-decoration: none;
         }
 
@@ -26,10 +25,9 @@
             position: relative;
             padding: 10px;
             font-size: 20px;
-            color: white;
+            color: orange;
             top: 30%;
             right: 5%;
-            text-align: center;
         }
 
         button {
@@ -45,8 +43,44 @@
         #title {
             font-style: italic;
             font-size: 60px;
-        }
-
-        h1 {
             text-align: center;
         }
+
+        p {
+            text-align: center;
+        }
+
+        #last{
+            text-align: center;
+        }
+        #start {
+            background-color:rgb(32, 124, 209);
+            margin-left: 33%;
+            padding: 10px 30px;
+            font-size: 15px;
+            color: orange;
+        }
+
+        #Submit {
+            background-color: rgb(32, 124, 209);
+            margin-left: 10%;
+            padding: 20px 10px;
+            font-size: 15px;
+            color: orange;
+        }
+
+        li {
+            background-color: rgb(78, 155, 228);
+            margin-top: 10px;
+            padding: 5px 15px;
+            width: 18%;
+            font-size: 18px;
+            color: orange;
+            
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+        
+    
